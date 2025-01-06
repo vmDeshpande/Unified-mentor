@@ -1,0 +1,14 @@
+[
+  {
+    "id": "a22e0c09-4bec-4d47-bed3-a20a9aeb137e",
+    "text": "Test",
+    "amount": 1000,
+    "category": "Salary"
+  },
+  {
+    "id": "908aa6e5-7f50-403f-a274-e27f41809f21",
+    "text": "Test2",
+    "amount": -550,
+    "category": "Transportation"
+  }
+]
