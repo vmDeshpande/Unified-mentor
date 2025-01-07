@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <script src="https://cdn.tailwindcss.com"></script>  <!-- TailwindCSS CDN -->
+    <link rel="stylesheet" href="styles.css">  <!-- Link to external styles -->
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white font-sans">
+
+    <!-- Main content container -->
+    <div class="flex flex-col h-screen">
+        <div class="flex-1 flex overflow-hidden">
+            <!-- Sidebar (hidden on smaller screens) -->
+            <div class="w-64 bg-gray-800 p-6 overflow-y-auto hidden md:block border-r border-gray-700">
+                <h1 class="text-2xl font-extrabold text-gray-100 mb-6">Your Library</h1>
+                <h2 class="text-lg font-semibold text-gray-300 mb-4">Uploaded Local Music</h2>
+                <ul id="playlist" class="space-y-4">
+                    <!-- Playlist items will be dynamically added here -->
+                </ul>
+
+                <h2 class="text-lg font-semibold text-gray-300 mt-8 mb-4">Online Music</h2>
+                <p class="text-sm text-gray-400 mb-4">Only songs from Jamendo platform are available</p>
+                <div class="mb-6">
+                    <!-- Search input for music -->
+                    <input type="text" id="search-input" placeholder="Search by title or artist" 
+                           class="w-full p-2 rounded-md bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+                <ul id="playlist-online" class="space-y-4">
+                    <!-- Playlist items for online music -->
+                </ul>
+            </div>
+
+            <!-- Now Playing Section -->
+            <div class="flex-1 p-8 overflow-y-auto">
+                <div id="player" class="max-w-lg mx-auto text-center">
+                    <div class="relative">
+                        <!-- Placeholder for album art -->
+                        <img id="album-art" src="./placeholder.png?height=300&width=300" alt="Album Art" 
+                             class="w-64 h-64 mx-auto rounded-lg shadow-lg mb-8 object-cover">
+                    </div>
+                    <h3 id="song-title" class="text-3xl font-bold mb-2 truncate">Song Title</h3>
+                    <p id="artist" class="text-gray-400 mb-1 truncate">Artist</p>
+                    <p id="album" class="text-gray-500 text-sm mb-8 truncate">Album</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Player controls at the bottom -->
+        <div class="bg-gray-800 p-4 border-t border-gray-700">
+            <div class="max-w-screen-lg mx-auto">
+                <div class="flex items-center justify-between mb-4">
+                    <!-- Current time and duration of the song -->
+                    <span id="current-time" class="text-xs text-gray-400">0:00</span>
+                    <div class="flex-1 mx-4">
+                        <!-- Seek bar for song progress -->
+                        <input type="range" id="seek-bar" class="w-full rounded-lg" min="0" max="100" value="0">
+                    </div>
+                    <span id="duration" class="text-xs text-gray-400">0:00</span>
+                </div>             
+
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-6">
+                        <!-- Buttons for Previous, Play/Pause, and Next -->
+                        <button id="prev-btn" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+                        <button id="play-pause-btn" class="bg-indigo-500 text-white rounded-full p-3 hover:bg-indigo-400 transition">
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </button>
+                        <button id="next-btn" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7m-8-14l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <!-- Volume control -->
+                        <span class="text-xs text-gray-400">Volume</span>
+                        <input type="range" id="volume-control" class="w-24 h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-indigo-500" min="0" max="100" value="100">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>  <!-- Link to external JavaScript file -->
+</body>
+</html>

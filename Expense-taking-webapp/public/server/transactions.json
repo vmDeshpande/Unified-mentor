@@ -1,14 +1,26 @@
 [
   {
-    "id": "a22e0c09-4bec-4d47-bed3-a20a9aeb137e",
-    "text": "Test",
+    "id": "cef6423c-6dfc-4455-ba1e-04072593d477",
+    "text": "Test1",
     "amount": 1000,
     "category": "Salary"
   },
   {
-    "id": "908aa6e5-7f50-403f-a274-e27f41809f21",
+    "id": "690c04d5-132c-4a45-97e6-8cd1518b08bf",
     "text": "Test2",
-    "amount": -550,
+    "amount": -500,
+    "category": "Food"
+  },
+  {
+    "id": "2573354b-087c-4dcc-9b37-7256f04b7b30",
+    "text": "Test3",
+    "amount": -250,
     "category": "Transportation"
+  },
+  {
+    "id": "5773c4e8-08f3-4845-81f6-13e82297cb2a",
+    "text": "Test4",
+    "amount": 100,
+    "category": "Other"
   }
 ]

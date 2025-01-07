@@ -1,0 +1,74 @@
+/* Custom styles for the progress bar and volume control */
+input[type="range"] {
+    -webkit-appearance: none;  /* Removes default appearance in WebKit browsers */
+    width: 100%;  /* Full width */
+    height: 8px;  /* Height of the progress bar */
+    background: #4a5568;  /* Dark background color for the progress bar */
+    outline: none;  /* Removes default outline */
+    opacity: 0.7;  /* Slightly transparent */
+    transition: opacity 0.2s;  /* Smooth opacity transition on hover */
+}
+
+/* Hover effect on the progress bar */
+input[type="range"]:hover {
+    opacity: 1;  /* Full opacity on hover */
+}
+
+/* Styles for the slider thumb (the circle that the user drags) */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;  /* Removes default appearance in WebKit browsers */
+    appearance: none;  /* Standardize across browsers */
+    width: 15px;  /* Thumb width */
+    height: 15px;  /* Thumb height */
+    background: #1db954;  /* Green color for the thumb */
+    cursor: pointer;  /* Pointer cursor to indicate it's interactive */
+    border-radius: 50%;  /* Make it a circle */
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 12px;  /* Thumb width for Firefox */
+    height: 12px;  /* Thumb height for Firefox */
+    background: #1db954;  /* Green color for the thumb in Firefox */
+    cursor: pointer;  /* Pointer cursor */
+    border-radius: 50%;  /* Circular thumb */
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 640px) {
+    #player img {
+        width: 200px;  /* Smaller album art for mobile */
+        height: 200px;  /* Maintain aspect ratio */
+    }
+
+    #song-title {
+        font-size: 1.5rem;  /* Larger font for song title */
+    }
+
+    #artist, #album {
+        font-size: 0.875rem;  /* Smaller font for artist and album */
+    }
+
+    .max-w-screen-lg {
+        max-width: 100%;  /* Full width on smaller screens */
+        padding: 0 1rem;  /* Add padding for responsiveness */
+    }
+}
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 8px;  /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #1db954;  /* Green color for scrollbar thumb */
+    border: none;  /* No border around the thumb */
+}
+
+::-webkit-scrollbar-track {
+    background-color: #2D3748;  /* Dark background for the scrollbar track */
+    border-radius: 10px;  /* Rounded corners for the track */
+}
+
+::-webkit-scrollbar-corner {
+    background-color: #2D3748;  /* Same color for corners as the track */
+}

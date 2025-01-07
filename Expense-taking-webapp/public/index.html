@@ -5,127 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Expense Tracker</title>
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome CDN for icons -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <style>
-    /* Background and Text Styles */
-    body {
-      background: #1a202c;
-      color: #fff;
-      font-family: 'Roboto', sans-serif;
-    }
-
-    /* Card Styles */
-    .card {
-      background-color: #2d3748;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      border-radius: 12px;
-    }
-
-    /* Button Styles */
-    .button-hover:hover {
-      background-color: #4fd1c5;
-      transition: background-color 0.3s ease;
-      transform: scale(1.05);
-    }
-
-    /* Form Input Styles */
-    input,
-    select {
-      background-color: #2d3748;
-      color: #fff;
-      border: 2px solid #4a5568;
-      border-radius: 8px;
-      padding: 12px;
-      font-size: 1rem;
-      width: 100%;
-      transition: all 0.3s ease;
-    }
-
-    input:focus,
-    select:focus {
-      outline: none;
-      border-color: #38b2ac;
-      box-shadow: 0 0 0 2px rgba(56, 178, 172, 0.3);
-    }
-
-    /* Transition Animations */
-    .fade-in {
-      animation: fadeIn 1s ease-out forwards;
-    }
-
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Hover effect for transaction items */
-    .transaction-item:hover {
-      background-color: #4a5568;
-      transform: scale(1.03);
-      transition: all 0.3s ease-in-out;
-    }
-
-    /* General Heading Styles */
-    h1,
-    h3,
-    h5 {
-      font-family: 'Poppins', sans-serif;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-    }
-
-    h3 {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: #63b3ed;
-    }
-
-    h5 {
-      font-size: 1.125rem;
-      font-weight: 500;
-    }
-
-    /* Table Styles */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    th,
-    td {
-      padding: 12px;
-      text-align: left;
-    }
-
-    th {
-      background-color: #4A5568;
-    }
-
-    td {
-      background-color: #2D3748;
-    }
-
-    /* Hover effect for table rows */
-    tr:hover {
-      background-color: #4a5568;
-    }
-  </style>
+  <!-- Custom CSS File -->
+  <link href="./styles.css" rel="stylesheet">
 </head>
 
 <body class="font-sans antialiased">
 
-  <!-- User Dashboard Section -->
+  <!-- User Dashboard Section: Displays welcome message -->
   <div id="logout-section" class="hidden mb-8 px-6 fade-in">
     <h3 class="font-semibold text-2xl text-blue-200">Welcome, <span id="current-user" class="text-blue-400"></span></h3>
   </div>
@@ -133,7 +23,7 @@
   <div class="max-w-full sm:max-w-4xl mx-auto mt-10 p-6 sm:p-8 card fade-in">
     <h1 class="text-3xl sm:text-4xl font-semibold text-center text-white mb-8">Expense Tracker</h1>
 
-    <!-- Balance Section -->
+    <!-- Balance Section: Shows total income and total expense -->
     <div class="flex flex-col sm:flex-row justify-between items-center mb-6 sm:px-6">
       <div class="text-green-400 text-xl font-semibold mb-4 sm:mb-0">
         <p>Total Income: <span id="money-plus" class="font-bold text-2xl">₹0.00</span></p>
@@ -143,17 +33,18 @@
       </div>
     </div>
 
-    <!-- Balance Total -->
+    <!-- Net Income Section -->
     <div class="text-center mb-6">
       <h4 class="text-xl font-medium text-gray-300">Net Income: <span id="balance" class="font-bold text-3xl">₹0.00</span></h4>
     </div>
 
     <hr class="mb-6 border-gray-600">
 
-    <!-- Add Transaction -->
+    <!-- Add Transaction Form Section -->
     <div id="add-transaction">
       <h5 class="text-lg font-medium text-gray-200 mb-4">Add New Transaction</h5>
       <form id="form" class="space-y-6">
+        <!-- Transaction Text Field -->
         <div>
           <label for="text" class="block text-gray-400">Transaction Text</label>
           <div class="flex items-center">
@@ -164,6 +55,7 @@
           </div>
         </div>
 
+        <!-- Amount Field -->
         <div>
           <label for="amount" class="block text-gray-400">Amount</label>
           <div class="flex items-center">
@@ -174,6 +66,7 @@
           </div>
         </div>
 
+        <!-- Transaction Type Dropdown -->
         <div>
           <label for="transaction-type" class="block text-gray-400">Transaction Type</label>
           <div class="flex items-center">
@@ -186,6 +79,7 @@
           </div>
         </div>
 
+        <!-- Category Dropdown -->
         <div>
           <label for="category" class="block text-gray-400">Category</label>
           <div class="flex items-center">
@@ -203,20 +97,20 @@
           </div>
         </div>
 
+        <!-- Submit Button -->
         <button type="submit"
           class="w-full p-4 mt-6 bg-blue-500 text-white font-semibold rounded-lg shadow-md button-hover">
           <i class="fas fa-plus mr-3"></i> Add Transaction
         </button>
       </form>
-      
     </div>
     <hr class="mb-6 border-gray-600">
 
-    <!-- Transaction History -->
+    <!-- Transaction History Section: Displays recent transactions -->
     <div class="mb-6" id="transaction-history">
       <h5 class="text-lg font-medium text-gray-200">Transaction History Small</h5>
       <ul id="list" class="space-y-4 mt-4 sm:px-6">
-        <!-- List items will go here -->
+        <!-- Sample Transaction Item (will be dynamically added) -->
         <li class="transaction-item p-4 bg-gray-700 rounded-lg">
           <div class="flex justify-between">
             <span class="text-gray-200">Sample Transaction</span>
@@ -227,10 +121,11 @@
     </div>
   </div>
 
+  <!-- Transaction Table Section -->
   <div class="max-w-4xl mx-auto mt-10 p-8 card">
     <h1 class="text-4xl font-semibold text-center text-white mb-8">Transaction History Table</h1>
 
-    <!-- Transaction Table -->
+    <!-- Transaction Table: Dynamically filled with transaction details -->
     <div class="overflow-x-auto">
       <table class="min-w-full text-gray-300">
         <thead>
@@ -243,12 +138,13 @@
           </tr>
         </thead>
         <tbody id="transaction-table">
-          <!-- Data will be dynamically inserted here -->
+          <!-- Table rows will be dynamically inserted here -->
         </tbody>
       </table>
     </div>
   </div>
 
+  <!-- External JavaScript file for logic -->
   <script src="script.js"></script>
 </body>
 

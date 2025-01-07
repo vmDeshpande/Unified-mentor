@@ -70,7 +70,3 @@ Transactions will automatically appear in the "Transaction History" section, and
 ## Author
 
 - [Vedant Deshpande](https://github.com/vmDeshpande)
-
----
-
-Happy Tracking! 🚀
