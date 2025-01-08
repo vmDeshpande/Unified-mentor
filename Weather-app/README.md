@@ -41,3 +41,7 @@ This is a simple weather application built using HTML, CSS, and JavaScript. It f
 ## Screenshot
 
 ![Weather App Screenshot](screenshot.png)
+
+## Author
+
+- [Vedant Deshpande](https://github.com/vmDeshpande)

@@ -38,6 +38,10 @@ This will start the server and you should be able to access the music player at 
 ## Contributing
 Feel free to fork this project and submit pull requests. For any issues or feature requests, please open an issue in the repository.
 
+## Screenshot
+
+![Music player](screenshot.png)
+
 ## Author
 
 - [Vedant Deshpande](https://github.com/vmDeshpande)

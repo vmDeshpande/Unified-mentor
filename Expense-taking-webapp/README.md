@@ -67,6 +67,10 @@ Once the server is running, you can access the application in your browser. You 
 
 Transactions will automatically appear in the "Transaction History" section, and the total amounts and net income will update in real-time.
 
+## Screenshot
+
+![Expense tracking webapp Screenshot](screenshot.png)
+
 ## Author
 
 - [Vedant Deshpande](https://github.com/vmDeshpande)
