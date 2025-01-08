@@ -30,7 +30,7 @@ An application designed to help users track their expenses, categorize them, and
 ### 3. Weather App
 A web application that provides real-time weather data for various locations. It fetches data from a public API and displays the temperature, humidity, and weather condition for the chosen city.
 
-- **Technologies Used**: HTML, CSS, JavaScript, Node.js, OpenWeather API
+- **Technologies Used**: HTML, CSS, JavaScript, OpenWeather API
 
 ---
 
