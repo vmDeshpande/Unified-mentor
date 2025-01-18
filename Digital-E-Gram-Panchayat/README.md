@@ -69,3 +69,11 @@ The platform should now be accessible at `http://localhost:3000` in your browser
 
 ## Contributing
 Feel free to fork the repository and submit pull requests for improvements or bug fixes!
+
+## Screenshot
+
+![Digital E Gram Panchayat](screenshot.png)
+
+## Author
+
+- [Vedant Deshpande](https://github.com/vmDeshpande)
