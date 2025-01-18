@@ -10,7 +10,7 @@ This repository contains the projects I developed during my internship at Unifie
   - [Weather App](https://github.com/vmDeshpande/Unified-mentor/tree/main/Weather-app)
   
 - Advanced Projects:
-  - [Digital E Gram Panchayat]()
+  - [Digital E Gram Panchayat](https://github.com/vmDeshpande/Unified-mentor/tree/main/Digital-E-Gram-Panchayat)
   - [Electric Vehicle Recharge Bunk]()
 
 ---
