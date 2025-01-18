@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Digital E Gram Panchayat</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</head>
+
+<body class="bg-gray-50 font-sans tracking-tight leading-relaxed">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md py-5">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-semibold text-gray-900 hover:text-blue-600 transition duration-300">
+                <a href="index.html">Digital E Gram Panchayat</a>
+            </h1>
+            <nav class="space-x-6 flex items-center">
+                <a href="./admin panel/dashboard.html" id="StaffpanelLink" class="text-gray-800 hover:text-blue-600 transition transform hover:scale-105">
+                    Staff Panel <i class="fas fa-user-shield"></i></a>
+                <a href="user-panel.html" id="UserpanelLink" class="text-gray-800 hover:text-blue-600 transition transform hover:scale-105">
+                    User Panel <i class="fas fa-users"></i></a>
+                <a href="login.html" id="loginLink" class="bg-blue-600 text-white px-5 py-2 rounded-md hover:bg-blue-700 transition transform hover:scale-105">
+                    Login <i class="fas fa-sign-in-alt"></i></a>
+                <a href="register.html" id="registerLink" class="bg-green-600 text-white px-5 py-2 rounded-md hover:bg-green-700 transition transform hover:scale-105">
+                    Register <i class="fas fa-user-plus"></i></a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Register Form Section -->
+    <main class="container mx-auto px-6 mt-16 flex justify-center">
+        <div class="bg-white shadow-lg p-10 rounded-lg w-full max-w-md">
+            <h2 class="text-3xl font-semibold text-gray-800 text-center mb-4">Register</h2>
+            <p class="text-gray-600 text-center mb-6">Create your account to manage your services</p>
+            <form class="space-y-6" action="javascript:void(0);" onsubmit="register();">
+                <div>
+                    <label for="username" class="block text-sm font-medium text-gray-700">
+                        <i class="fas fa-user mr-2 text-blue-600"></i>Username
+                    </label>
+                    <input type="text" id="username" name="username" required placeholder="Enter your username"
+                        class="w-full mt-1 p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="contact" class="block text-sm font-medium text-gray-700">
+                        <i class="fas fa-phone-alt mr-2 text-blue-600"></i>Contact Number
+                    </label>
+                    <input type="tel" id="contact" name="contact" required placeholder="Enter your contact number"
+                        class="w-full mt-1 p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500" maxlength="12" pattern="[7-9]{1}[0-9]{9}">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">
+                        <i class="fas fa-envelope mr-2 text-blue-600"></i>Email
+                    </label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email"
+                        class="w-full mt-1 p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="dob" class="block text-sm font-medium text-gray-700">
+                        <i class="fas fa-calendar-alt mr-2 text-blue-600"></i>Date of Birth
+                    </label>
+                    <input type="date" id="dob" name="dob" required
+                        class="w-full mt-1 p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="state" class="block text-sm font-medium text-gray-700">
+                        <i class="fas fa-map-marker-alt mr-2 text-blue-600"></i>State
+                    </label>
+                    <select id="state" name="state" class="w-full mt-1 p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500">
+                        <!-- Add state options dynamically -->
+                    </select>
+                </div>
+                <div>
+                    <label for="city" class="block text-sm font-medium text-gray-700">
+                        <i class="fas fa-city mr-2 text-blue-600"></i>City
+                    </label>
+                    <select id="city" name="city" class="w-full mt-1 p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500">
+                        <!-- Add city options dynamically -->
+                    </select>
+                </div>
+                <div>
+                    <label for="aadhar_number" class="block text-sm font-medium text-gray-700">
+                        <i class="fas fa-id-card mr-2 text-blue-600"></i>Aadhar Number
+                    </label>
+                    <input type="text" id="aadhar_number" name="aadhar_number" required placeholder="Enter your Aadhar number"
+                        class="w-full mt-1 p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500"
+                        pattern="^([0-9]{4}[0-9]{4}[0-9]{4}$)|([0-9]{4}\s[0-9]{4}\s[0-9]{4}$)|([0-9]{4}-[0-9]{4}-[0-9]{4}$)">
+                </div>
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700">
+                        <i class="fas fa-lock mr-2 text-blue-600"></i>Password
+                    </label>
+                    <input type="password" id="password" name="password" required placeholder="Enter your password"
+                        class="w-full mt-1 p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500"
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                        title="Password must contain at least one number, one uppercase and lowercase letter, and at least 8 or more characters">
+                </div>
+                <button type="submit" class="w-full bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition transform hover:scale-105">
+                    <i class="fas fa-user-plus mr-2"></i>Register
+                </button>
+                <div class="text-right">
+                    <a href="login.html" class="text-sm text-blue-600 hover:underline">
+                        <i class="fas fa-sign-in-alt mr-1"></i>Already have an account?
+                    </a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white py-8 text-center">
+        <p>© 2025 Digital E Gram Panchayat. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>

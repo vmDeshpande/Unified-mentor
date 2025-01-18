@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - Digital E Gram Panchayat</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body class="bg-gray-50 font-sans">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md py-5 transition-all ease-in-out duration-300">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-semibold text-gray-900 hover:text-blue-600 transition duration-300">
+                <a href="index.html">Digital E Gram Panchayat</a>
+            </h1>
+            <nav class="space-x-6 flex items-center">
+                <a href="./admin panel/dashboard.html" id="StaffpanelLink" class="text-gray-800 hover:text-blue-600 transition duration-300 transform hover:scale-105"><i class="fas fa-users-cog"></i> Staff Panel</a>
+                <a href="user-panel.html" id="UserpanelLink" class="text-gray-800 hover:text-blue-600 transition duration-300 transform hover:scale-105"><i class="fas fa-user-shield"></i> User Panel</a>
+                <a href="login.html" id="loginLink" class="bg-blue-600 text-white px-5 py-2 rounded-md hover:bg-blue-700 transition duration-300 transform hover:scale-105"><i class="fas fa-sign-in-alt"></i> Login</a>
+                <a href="register.html" id="registerLink" class="bg-blue-600 text-white px-5 py-2 rounded-md hover:bg-blue-700 transition duration-300 transform hover:scale-105"><i class="fas fa-user-plus"></i> Register</a>
+                <a id="logoutButton" class="bg-red-600 text-white px-5 py-2 rounded-md hover:bg-red-700 transition duration-300 transform hover:scale-105"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                <a id="userprofile" href="user-profile.html" class="text-gray-800 hover:text-blue-600 transition duration-300 transform hover:scale-105"><i class="fas fa-user-circle fa-2x"></i></a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- User Profile Section -->
+    <main id="mainProfile" class="container mx-auto mt-6 px-6">
+        <section class="bg-blue-50 p-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300">
+            <h2 class="text-3xl font-bold text-blue-700"><i class="fas fa-user"></i> User Profile</h2>
+            <div class="mt-6 space-y-4">
+                <!-- User Icon with Details -->
+                <div class="flex items-center space-x-4">
+                    <div class="text-blue-700 text-4xl">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div>
+                        <div class="text-lg font-semibold text-gray-800"><i class="fas fa-user-tag"></i> Username:</div>
+                        <div id="profileUsername" class="text-gray-700">text</div>
+                    </div>
+                </div>
+                <div class="flex justify-between">
+                    <div class="text-lg font-semibold text-gray-800"><i class="fas fa-phone-alt"></i> Contact:</div>
+                    <div id="profileContact" class="text-gray-700">number</div>
+                </div>
+                <div class="flex justify-between">
+                    <div class="text-lg font-semibold text-gray-800"><i class="fas fa-envelope"></i> Email:</div>
+                    <div id="profileEmail" class="text-gray-700">email</div>
+                </div>
+                <div class="flex justify-between">
+                    <div class="text-lg font-semibold text-gray-800"><i class="fas fa-birthday-cake"></i> Date of Birth:</div>
+                    <div id="profileDob" class="text-gray-700">date</div>
+                </div>
+                <div class="flex justify-between">
+                    <div class="text-lg font-semibold text-gray-800"><i class="fas fa-map-marker-alt"></i> State:</div>
+                    <div id="profileState" class="text-gray-700">state</div>
+                </div>
+                <div class="flex justify-between">
+                    <div class="text-lg font-semibold text-gray-800"><i class="fas fa-city"></i> City:</div>
+                    <div id="profileCity" class="text-gray-700">city</div>
+                </div>
+                <div class="flex justify-between">
+                    <div class="text-lg font-semibold text-gray-800"><i class="fas fa-id-card"></i> Aadhar Number:</div>
+                    <div id="profileAadhar" class="text-gray-700">aadhar number</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white mt-12 py-4 text-center">
+        <p><i class="fas fa-copyright"></i> 2025 Digital E Gram Panchayat. All Rights Reserved.</p>
+    </footer>
+
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>

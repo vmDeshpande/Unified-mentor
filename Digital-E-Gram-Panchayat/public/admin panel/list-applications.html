@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Panel - Digital E Gram Panchayat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body class="bg-gray-100 font-sans flex flex-col min-h-screen">
+
+    <!-- Sidebar Navigation -->
+    <aside class="w-64 bg-blue-600 text-white h-screen p-6 fixed">
+        <h2 class="text-2xl font-bold mb-8"><i class="fas fa-cogs"></i> Staff Panel</h2>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html" class="block px-4 py-2 mt-2 hover:bg-blue-700 rounded"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li id="createService"><a href="create-services.html" class="block px-4 py-2 mt-2 hover:bg-blue-700 rounded"><i class="fas fa-plus-circle"></i> Create Services</a></li>
+                <li><a href="list-applications.html" class="block px-4 py-2 mt-2 hover:bg-blue-700 rounded"><i class="fas fa-folder-open"></i> Applications</a></li>
+                <li><a href="../index.html" class="block px-4 py-2 mt-2 hover:bg-blue-700 rounded"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#" id="logoutButton" class="block px-4 py-2 mt-2 hover:bg-blue-700 rounded"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 ml-64 p-6">
+        <header class="bg-blue-600 text-white shadow mb-8">
+            <div class="container mx-auto px-6 py-3">
+                <div class="flex justify-between items-center">
+                    <h1 class="text-2xl font-bold"><i class="fas fa-users"></i> Staff Panel</h1>
+                </div>
+            </div>
+        </header>
+
+        <section>
+            <h2 class="text-2xl font-bold text-gray-800"><i class="fas fa-folder-open"></i> Applications</h2>
+            <p class="mt-4 text-gray-700">Staff Panel - View Applications</p>
+        </section>
+
+        <!-- Manage Services Section -->
+        <section class="mt-12">
+            <!-- Service Selection -->
+            <div class="mb-4">
+                <label for="serviceDropdown" class="block text-lg"><i class="fas fa-list"></i> Select Service:</label>
+                <select id="serviceDropdown" class="form-select w-full bg-white border-2 p-2">
+                    <option value="" disabled selected>Select a service</option>
+                </select>
+            </div>
+
+            <!-- Applications List -->
+            <div class="mb-4">
+                <h2 class="text-2xl font-semibold mb-2"><i class="fas fa-file-alt"></i> Applications:</h2>
+                <div id="applicationsList" class="space-y-4">
+                    <!-- Dynamically populated list of applications will appear here -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white py-4 text-center mt-auto">
+        <p><i class="fas fa-copyright"></i> 2025 Digital E Gram Panchayat. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="../script.js"></script>
+</body>
+
+</html>

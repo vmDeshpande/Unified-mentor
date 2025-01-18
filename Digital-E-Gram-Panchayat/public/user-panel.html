@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Applications - Digital E Gram Panchayat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="carousel.js" defer></script>
+</head>
+
+<body class="bg-gray-50 font-sans tracking-tight leading-relaxed">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md py-5 transition-all ease-in-out duration-300 transform">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-semibold text-gray-900 hover:text-blue-600 transition duration-300"><a href="index.html">Digital E Gram Panchayat</a></h1>
+            <nav class="space-x-6 flex items-center">
+                <a href="#services" class="text-gray-800 hover:text-blue-600 transition duration-300 transform hover:scale-105">Services <i class="fas fa-cogs"></i></a>
+                <a href="./admin panel/dashboard.html" id="StaffpanelLink" class="text-gray-800 hover:text-blue-600 transition duration-300 transform hover:scale-105">Staff Panel <i class="fas fa-user-shield"></i></a>
+                <a href="user-panel.html" id="UserpanelLink" class="text-gray-800 hover:text-blue-600 transition duration-300 transform hover:scale-105">User Panel <i class="fas fa-users"></i></a>
+                <a href="login.html" id="loginLink" class="bg-blue-600 text-white px-5 py-2 rounded-md hover:bg-blue-700 transition duration-300 transform hover:scale-105">Login <i class="fas fa-sign-in-alt"></i></a>
+                <a href="register.html" id="registerLink" class="bg-green-600 text-white px-5 py-2 rounded-md hover:bg-green-700 transition duration-300 transform hover:scale-105">Register <i class="fas fa-user-plus"></i></a>
+                <a id="logoutButton" class="bg-red-600 text-white px-5 py-2 rounded-md hover:bg-red-700 transition duration-300 transform hover:scale-105">Logout <i class="fas fa-sign-out-alt"></i></a>
+                <a id="userprofile" href="user-profile.html" class="text-gray-800 hover:text-blue-600 transition duration-300 transform hover:scale-105">
+                    <i class="fas fa-user-circle fa-2x"></i>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="bg-blue-50 p-8 rounded-lg shadow-lg text-center mt-6">
+        <h2 class="text-3xl font-bold text-blue-700">Welcome to User Panel</h2>
+        <p class="mt-4 text-gray-700">Track the status of your applications and explore services.</p>
+    </section>
+
+    <!-- Your Applications Section -->
+    <section id="applications" class="mt-12 bg-gray-200 p-6 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300">
+        <h2 class="text-2xl font-bold text-gray-800">Your Applications</h2>
+        <div id="userApplicationsList" class="mt-6">
+            <!-- User's applications will be dynamically loaded here -->
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="mt-12">
+        <h2 class="text-2xl font-bold text-gray-800">More Services</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6" id="serviceList">
+            <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition transform hover:scale-105">
+                <h3 class="text-lg font-semibold">Services 1</h3>
+                <p class="text-gray-600 mt-2">Admin can create new government schemes and services for the public.</p>
+                <button class="mt-6 inline-block bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition duration-300 transform hover:scale-105">Apply</button>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition transform hover:scale-105">
+                <h3 class="text-lg font-semibold">Services 2</h3>
+                <p class="text-gray-600 mt-2">Public users can apply for services using our platform.</p>
+                <button class="mt-6 inline-block bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition duration-300 transform hover:scale-105">Apply</button>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition transform hover:scale-105">
+                <h3 class="text-lg font-semibold">Services 3</h3>
+                <p class="text-gray-600 mt-2">Users can track the status of their service applications anytime.</p>
+                <button class="mt-6 inline-block bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition duration-300 transform hover:scale-105">Apply</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white mt-12 py-4 text-center transform hover:scale-105 transition-all duration-300">
+        <p>© 2025 Digital E Gram Panchayat. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>

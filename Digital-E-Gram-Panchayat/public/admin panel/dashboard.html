@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Panel - Digital E Gram Panchayat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body class="bg-gray-100 font-sans flex flex-col min-h-screen">
+
+    <!-- Sidebar Navigation -->
+    <aside class="w-64 bg-blue-600 text-white h-screen p-6 fixed">
+        <h2 class="text-2xl font-bold mb-8"><i class="fas fa-tools mr-2"></i>Staff Panel</h2>
+        <nav>
+            <ul>
+                <li>
+                    <a href="dashboard.html" class="flex items-center px-4 py-2 mt-2 hover:bg-blue-700 rounded">
+                        <i class="fas fa-tachometer-alt mr-2"></i>Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="create-services.html" class="flex items-center px-4 py-2 mt-2 hover:bg-blue-700 rounded">
+                        <i class="fas fa-plus-square mr-2"></i>Create Services
+                    </a>
+                </li>
+                <li>
+                    <a href="list-applications.html" class="flex items-center px-4 py-2 mt-2 hover:bg-blue-700 rounded">
+                        <i class="fas fa-file-alt mr-2"></i>Applications
+                    </a>
+                </li>
+                <li>
+                    <a href="../index.html" class="flex items-center px-4 py-2 mt-2 hover:bg-blue-700 rounded">
+                        <i class="fas fa-home mr-2"></i>Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="logoutButton" class="flex items-center px-4 py-2 mt-2 hover:bg-blue-700 rounded">
+                        <i class="fas fa-sign-out-alt mr-2"></i>Logout
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 ml-64 p-6">
+        <header class="bg-blue-600 text-white shadow mb-8">
+            <div class="container mx-auto px-6 py-3">
+                <div class="flex justify-between items-center">
+                    <h1 class="text-2xl font-bold"><i class="fas fa-tools mr-2"></i>Staff Panel</h1>
+                </div>
+            </div>
+        </header>
+
+        <section>
+            <h2 class="text-2xl font-bold text-gray-800"><i class="fas fa-tachometer-alt mr-2"></i>Dashboard</h2>
+            <p class="mt-4 text-gray-700">Welcome to the Staff Panel. Here you can manage the services, view applications, and more.</p>
+        </section>
+
+        <!-- Manage Services Section -->
+        <section class="mt-12">
+            <h2 class="text-2xl font-bold text-gray-800"><i class="fas fa-cogs mr-2"></i>Manage Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6" id="adminServiceList">
+                <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+                    <h3 class="text-lg font-semibold"><i class="fas fa-plus-circle mr-2"></i>Create New Service</h3>
+                    <p class="text-gray-600 mt-2">Admin can create new government services for the public.</p>
+                    <a href="create-services.html" class="mt-6 inline-block bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700">
+                        <i class="fas fa-arrow-right mr-2"></i>Create Service
+                    </a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+                    <h3 class="text-lg font-semibold"><i class="fas fa-list-alt mr-2"></i>View Existing Services</h3>
+                    <p class="text-gray-600 mt-2">Admin can view and manage existing services.</p>
+                    <a href="services.html" class="mt-6 inline-block bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700">
+                        <i class="fas fa-arrow-right mr-2"></i>View Services
+                    </a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+                    <h3 class="text-lg font-semibold"><i class="fas fa-users-cog mr-2"></i>Manage Staff</h3>
+                    <p class="text-gray-600 mt-2">Admin can manage the staff who have access to the platform.</p>
+                    <a href="staff-panel.html" class="mt-6 inline-block bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700">
+                        <i class="fas fa-arrow-right mr-2"></i>Manage Staff
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white py-4 text-center mt-auto">
+        <p><i class="fas fa-copyright mr-2"></i>2025 Digital E Gram Panchayat. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="../script.js"></script>
+</body>
+
+</html>
