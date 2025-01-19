@@ -86,6 +86,47 @@
                     </a>
                 </div>
             </div>
+
+              <!-- Edit Service Modal -->
+<div id="editServiceModal" class="modal hidden fixed inset-0 z-50 bg-gray-800 bg-opacity-50 flex justify-center items-center">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-1/3">
+        <h3 class="text-lg font-semibold mb-4">Edit Service</h3>
+        <form id="editServiceForm">
+            <input type="hidden" id="editServiceId" />
+            <label for="editServiceName" class="block">Service Name:</label>
+            <input type="text" id="editServiceName" class="w-full p-2 mb-4 border" />
+
+            <label for="editDescription" class="block">Description:</label>
+            <textarea id="editDescription" class="w-full p-2 mb-4 border"></textarea>
+
+            <label for="editCost" class="block">Cost:</label>
+            <input type="text" id="editCost" class="w-full p-2 mb-4 border" />
+
+            <label for="editAvailability" class="block">Availability:</label>
+            <select class="mt-1 p-2 border border-gray-300 rounded w-full" id="editAvailability" name="editAvailability">
+                <option value="true">Available</option>
+                <option value="false">Not-available</option>
+            </select>
+
+            <label for="editCategory" class="block">Category:</label>
+            <select class="mt-1 p-2 border border-gray-300 rounded w-full" id="editCategory" name="editCategory">
+                <option value="Government Schemes & Benefits">Government Schemes & Benefits</option>
+                <option value="Land & Property Services">Land & Property Services</option>
+                <option value="Legal Services">Legal Services</option>
+                <option value="Public Welfare Services">Public Welfare Services</option>
+                <option value="Infrastructure & Development">Infrastructure & Development</option>
+                <option value="Agriculture Services">Agriculture Services</option>
+                <option value="Education & Training">Education & Training</option>
+                <option value="Transport & Vehicle Services">Transport & Vehicle Services</option>
+                <option value="Environment & Conservation">Environment & Conservation</option>
+                <option value="Citizen Services">Citizen Services</option>
+            </select>
+
+            <button type="button" onclick="submitEditService()" class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700">Save Changes</button>
+            <button type="button" onclick="closeEditServiceModal()" class="bg-gray-600 text-white px-6 py-3 rounded hover:bg-gray-700 mt-4">Cancel</button>
+        </form>
+    </div>
+</div>
         </section>
     </main>
 
