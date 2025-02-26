@@ -1,0 +1,28 @@
+/* Styling for the booked indicator (cat icon) */
+.booked-indicator {
+    position: absolute;
+    top: 65%;  /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust to exact center */
+    width: 60px;  /* Set the size of the car icon */
+    height: 60px;
+    background-image: url('../assets/images/car\ icon.png'); /* Path to the transparent EV car icon */
+    background-size: contain; /* Ensure the icon is contained within the button */
+    background-repeat: no-repeat; /* Don't repeat the icon */
+    animation: slideInFromLeft 2s ease-out;  /* Apply the animation */
+}
+
+/* Define the keyframes for the animation */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translate(-150%, -50%);  /* Start position (off-screen to the left) */
+    }
+    100% {
+        transform: translate(-50%, -50%);  /* End position (centered) */
+    }
+}
+/* Optional: To make sure the slot buttons have relative positioning */
+.slot-btn {
+    position: relative;
+}
+

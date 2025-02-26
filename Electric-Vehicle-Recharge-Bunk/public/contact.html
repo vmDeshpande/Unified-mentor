@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <title>EV Charging Station Finder</title>
+    <link rel="icon" href="../assets/images/ev_charging_station_favicon-removebg-preview.png" type="image/gif" sizes="16x16">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" >
+    <meta content="EV Charging Station Finder" name="description" >
+    <meta content="EV" name="keywords" >
+    <meta content="Vedant Deshpande" name="author" >
+    <!-- CSS Files
+    ================================================== -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="css/plugins.css" rel="stylesheet" type="text/css" >
+    <link href="css/swiper.css" rel="stylesheet" type="text/css" >
+    <link href="css/style.css" rel="stylesheet" type="text/css" >
+    <link href="css/coloring.css" rel="stylesheet" type="text/css" >
+    <!-- color scheme -->
+    <link id="colors" href="css/colors/scheme-01.css" rel="stylesheet" type="text/css" >
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="float-text show-on-scroll">
+            <span><a href="#">Scroll to top</a></span>
+        </div>
+        <div class="scrollbar-v show-on-scroll"></div>
+        
+        <!-- page preloader begin -->
+        <div id="de-loader"></div>
+        <!-- page preloader close -->
+
+        <!-- header begin -->
+        <header class="header-lightscroll-light has-topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex sm-pt10">
+                            <div class="de-flex-col">
+                                <!-- logo begin -->
+                                <div id="logo">
+                                    <a href="index.html">
+                                        <img class="logo-main" src="../assets/images/673c716937f2fe93a8f04183_White logo.png" alt="" >
+                                        <img class="logo-scroll" src="../assets/images/673c716937f2fe93a8f04183_White logo.png" alt="" >
+                                        <img class="logo-mobile" src="../assets/images/673c716937f2fe93a8f04183_White logo.png" alt="" >
+                                    </a>
+                                </div>
+                                <!-- logo close -->
+                            </div>
+                            <div class="de-flex-col header-col-mid">
+                                <ul id="mainmenu">
+                                    <li><a class="menu-item" href="index.html">Home</a></li>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a class="menu-item" href="contact.html">Contact</a></li>
+                                </ul>
+                            </div>
+                            <div class="de-flex-col">
+                                <div class="menu_side_area">          
+                                    <a href="map.html" class="btn-line">Locate station near you</a>
+                                    <span id="menu-btn"></span>
+                                </div>
+                            </div>
+                            <div class="de-flex-col" id="login-link">
+                                <div class="">          
+                                    <a href="./admin/html/login.html" class="btn-line">Login</a>
+                                    <span id="menu-btn"></span>
+                                </div>
+                            </div>
+                            <div class="de-flex-col" id="register-link">
+                                <div class="">          
+                                    <a href="./admin/html/register.html" class="btn-line">Register</a>
+                                    <span id="menu-btn"></span>
+                                </div>
+                            </div>
+                            <div class="de-flex-col" id="control-panel-link">
+                                <div class="">          
+                                    <a href="control-panel.html" class="btn-line">Control Panel</a>
+                                    <span id="menu-btn"></span>
+                                </div>
+                            </div>
+                            <div class="de-flex-col" id="user-panel-link">
+                                <div class="">          
+                                    <a href="user-panel.html" class="btn-line">User Panel</a>
+                                    <span id="menu-btn"></span>
+                                </div>
+                            </div>
+                            <div class="de-flex-col" id="logout-link">
+                                <div class="menu_side_area">          
+                                    <a href="index.html" class="btn-line">Logout</a>
+                                    <span id="menu-btn"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header close -->
+        <!-- content begin -->
+        <div class="no-bottom no-top" id="content">
+            <div id="top"></div>
+            <section class="pt10 pb10 mt80 bg-grey">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <h3 class="mb-0">Contact<i class="icofont-dotted-right id-color ms-2"></i></h3>
+                        </div>
+
+                        <div class="col-lg-6 text-lg-end">
+                            <ul class="crumb">
+                                <li><a href="index.html">Home</a></li>
+                                <li class="active">Contact Us</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="container">
+                    <div class="row g-4 gx-5">
+                        <div class="col-lg-8">
+                            <p>Whether you have a question, a suggestion, or just want to say hello, this is the place to do it. Please fill out the form below with your details and message, and we'll get back to you as soon as possible.</p>
+
+                            
+                            <form name="contactForm" id="contact_form" class="position-relative z1000" method="post" action="#">
+                                <div class="row gx-4">
+                                    <div class="col-lg-6 col-md-6 mb10">
+                                        <div class="field-set">
+                                            <span class="d-label fw-bold">Name</span>
+                                            <input type="text" name="Name" id="name" class="form-control" placeholder="Your Name" required>
+                                        </div>
+
+                                        <div class="field-set">
+                                            <span class="d-label fw-bold">Email</span>
+                                            <input type="text" name="Email" id="email" class="form-control" placeholder="Your Email" required>
+                                        </div>
+
+                                        <div class="field-set">
+                                            <span class="d-label fw-bold">Phone</span>
+                                            <input type="text" name="phone" id="phone" class="form-control" placeholder="Your Phone" required>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="field-set mb20">
+                                            <span class="d-label fw-bold">Message</span>
+                                            <textarea name="message" id="message" class="form-control" placeholder="Your Message" required></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                    
+                                
+                                <div class="g-recaptcha" data-sitekey="6LdW03QgAAAAAJko8aINFd1eJUdHlpvT4vNKakj6"></div>
+                                <div id='submit' class="mt20">
+                                    <input type='submit' id='send_message' value='Send Message' class="btn-main">
+                                </div>
+
+                                <div id="success_message" class='success'>
+                                    Your message has been sent successfully. Refresh this page if you want to send more messages.
+                                </div>
+                                <div id="error_message" class='error'>
+                                    Sorry there was an error sending your form.
+                                </div>
+                            </form>
+
+                            </div>
+
+                        <div class="col-lg-4">
+                            <h4>Our Office</h4>
+                            <div class="img-with-cap mb20">
+                                <div class="d-title">Mon - Fri 08.00 - 18.00</div>
+                                <div class="d-overlay"></div>
+                                <img src="images/misc/5.webp" class="img-fullwidth rounded-1" alt="">
+                            </div>
+
+                            <div class="spacer-single"></div>
+
+                            <div class="fw-bold text-dark"><i class="icofont-location-pin me-2 id-color-2"></i>Office Location</div>
+                            XYZ, india
+
+                            <div class="spacer-single"></div>
+
+                            <div class="fw-bold text-dark"><i class="icofont-envelope me-2 id-color-2"></i>Send a Message</div>
+                            vedant.milind.deshpande@gmail.com
+
+                            <div class="spacer-single"></div>
+
+                            <div class="fw-bold text-dark"><i class="icofont-phone me-2 id-color-2"></i>Call Us Directly</div>
+                            +91 9975196491
+
+                            <div class="spacer-single"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>            
+
+        </div>
+        <!-- content close -->
+        <!-- footer begin -->
+        <footer class="section-dark">
+            <div class="container">
+                <div class="row gx-5">
+                    <div class="col-lg-4 col-sm-6">
+                        <img src="../assets/images/673c716937f2fe93a8f04183_White logo.png" alt="" >
+                        <div class="spacer-20"></div>
+                        <p>EV Charging Stations are leading the charge towards a more sustainable future, offering a thrilling blend of cutting-edge technology, zero emissions, and unparalleled efficiency. Our journey towards a cleaner, greener world with electric vehicles leading the way.</p>
+
+                        <div class="social-icons mb-sm-30">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-12 order-lg-1 order-sm-2">
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="widget">
+                                    <h5>Company</h5>
+                                    <ul>                                        
+                                        <li><a href="about.html">About Us</a></li>
+                                        <li><a href="#">History</a></li>
+                                        <li><a href="#">Testimonials</a></li>
+                                        <li><a href="#">Careers</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="widget">
+                                    <h5>Tesla EV's</h5>
+                                    <ul>
+                                        <li><a href="#">Model 3</a></li>
+                                        <li><a href="#">Model Y</a></li>
+                                        <li><a href="#">Model S</a></li>
+                                        <li><a href="#">Model X</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 order-lg-2 order-sm-1">
+                        <div class="widget">
+                            <div class="fw-bold text-white"><i class="icofont-location-pin me-2 id-color"></i>Showroom Location</div>
+                            XYZ, india
+
+                            <div class="spacer-20"></div>
+
+                            <div class="fw-bold text-white"><i class="icofont-envelope me-2 id-color"></i>Send a Message</div>
+                            vedant.milind.deshpande@gmail.com     
+
+                            <div class="spacer-20"></div>
+
+                            <div class="fw-bold text-white"><i class="icofont-envelope me-2 id-color"></i>Make a Phone Call</div>
+                            +91 9975196491                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="subfooter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="de-flex">
+                                <div class="de-flex-col">
+                                    Copyright 2024 - Made by Vedant Deshpande
+                                </div>
+                                <ul class="menu-simple">
+                                    <li><a href="#">Terms &amp; Conditions</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer close -->
+    </div>
+    
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="js/plugins.js"></script>
+    <script src="js/designesia.js"></script>
+
+    <script src="../script.js"></script>
+</body>
+</html>

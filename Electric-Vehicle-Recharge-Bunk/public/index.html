@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <title>EV Charging Station Finder</title>
+    <link rel="icon" href="../assets/images/ev_charging_station_favicon-removebg-preview.png" type="image/gif" sizes="16x16">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" >
+    <meta content="EV Charging Station Finder" name="description" >
+    <meta content="EV" name="keywords" >
+    <meta content="Vedant Deshpande" name="author" >
+    <!-- CSS Files
+    ================================================== -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="css/plugins.css" rel="stylesheet" type="text/css" >
+    <link href="css/swiper.css" rel="stylesheet" type="text/css" >
+    <link href="css/style.css" rel="stylesheet" type="text/css" >
+    <link href="css/coloring.css" rel="stylesheet" type="text/css" >
+    <!-- color scheme -->
+    <link id="colors" href="css/colors/scheme-01.css" rel="stylesheet" type="text/css" >
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="float-text show-on-scroll">
+            <span><a href="#">Scroll to top</a></span>
+        </div>
+        <div class="scrollbar-v show-on-scroll"></div>
+        
+        <!-- page preloader begin -->
+        <div id="de-loader"></div>
+        <!-- page preloader close -->
+
+        <!-- header begin -->
+        <header class="transparent">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex sm-pt10">
+                            <div class="de-flex-col">
+                                <!-- logo begin -->
+                                <div id="logo">
+                                    <a href="index.html">
+                                        <img class="logo-main" src="../assets/images/673c716937f2fe93a8f04183_White logo.png" alt="" >
+                                        <img class="logo-scroll" src="../assets/images/673c716937f2fe93a8f04183_White logo.png" alt="" >
+                                        <img class="logo-mobile" src="../assets/images/673c716937f2fe93a8f04183_White logo.png" alt="" >
+                                    </a>
+                                </div>
+                                <!-- logo close -->
+                            </div>
+                            <div class="de-flex-col header-col-mid">
+                                <ul id="mainmenu">
+                                    <li><a class="menu-item" href="index.html">Home</a></li>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a class="menu-item" href="contact.html">Contact</a></li>
+                                </ul>
+                            </div>
+                            <div class="de-flex-col">
+                                <div class="menu_side_area">          
+                                    <a href="map.html" class="btn-line">Locate station near you</a>
+                                    <span id="menu-btn"></span>
+                                </div>
+                            </div>
+                            <div class="de-flex-col" id="login-link">
+                                <div class="">          
+                                    <a href="./admin/html/login.html" class="btn-line">Login</a>
+                                    <span id="menu-btn"></span>
+                                </div>
+                            </div>
+                            <div class="de-flex-col" id="register-link">
+                                <div class="">          
+                                    <a href="./admin/html/register.html" class="btn-line">Register</a>
+                                    <span id="menu-btn"></span>
+                                </div>
+                            </div>
+                            <div class="de-flex-col" id="control-panel-link">
+                                <div class="">          
+                                    <a href="./admin/html/index.html" class="btn-line">Control Panel</a>
+                                    <span id="menu-btn"></span>
+                                </div>
+                            </div>
+                            <div class="de-flex-col" id="user-panel-link">
+                                <div class="">          
+                                    <a href="user-panel.html" class="btn-line">User Panel</a>
+                                    <span id="menu-btn"></span>
+                                </div>
+                            </div>
+                            <div class="de-flex-col" id="logout-link">
+                                <div class="menu_side_area">          
+                                    <a href="index.html" class="btn-line">Logout</a>
+                                    <span id="menu-btn"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header close -->
+        <!-- content begin -->
+        <div class="no-bottom no-top" id="content">
+
+            <div id="top"></div>
+
+            <section class="text-light jarallax">
+                <img src="images/background/7.webp" class="jarallax-img" alt="">
+                <div class="container relative z-2">
+                    <div class="spacer-single"></div>
+                    <div class="row g-4 align-items-center">
+                        <div class="col-lg-7 relative">
+                            <div class="relative z-index-1000">
+                                <p class="d-inline fw-600"><i class="id-color icofont-badge me-2"></i>Most Innovative Award Winner</p>
+                                <div class="spacer-10"></div>
+                                <h1>Sustainable Charging for Every Mile</h1>
+
+                                <div class="col-lg-8">
+                                    <p>EV Charging Stations are leading the charge towards a more sustainable future, offering a thrilling blend of cutting-edge technology, zero emissions, and unparalleled efficiency.</p>
+                                    <div class="spacer-10"></div>
+                                    <a class="btn-main px-5" href="./map.html">Find Station</a>
+
+                                    <div class="d-inline">
+                                        <span class="btn-play-wrap wow fadeInUp" data-wow-delay=".8s">
+                                            <a id="play-video" class="video-play-button invert popup-youtube mt-20" href="https://www.youtube.com/watch?v=C6rf51uHWJg"><span></span>
+                                            </a>
+                                            <span>Play Video</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="spacer-double"></div>
+
+                            <div class="row g-4">                                
+                                <div class="col-4 mb-sm-30">
+                                    <div class="de_count fs-15 wow fadeInRight" data-wow-delay=".0s">
+                                        <h3 class="fs-40"><span class="timer fs-40" data-to="240" data-speed="3000">0</span>+</h3>
+                                        Charger Stations
+                                    </div>
+                                </div>
+                                <div class="col-4 mb-sm-30">
+                                    <div class="de_count fs-15 wow fadeInRight" data-wow-delay=".2s">
+                                        <h3 class="fs-40"><span class="timer fs-40" data-to="20" data-speed="3000">0</span>+</h3>
+                                        Countries
+                                    </div>
+                                </div>
+                                <div class="col-4 mb-sm-30">
+                                    <div class="de_count fs-15 wow fadeInRight" data-wow-delay=".4s">
+                                        <h3 class="fs-40"><span class="timer fs-40" data-to="2" data-speed="3000">0</span>k</h3>
+                                        Happy Customers
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="de-gradient-black-bottom bottom-0 h-50"></div>
+            </section>
+
+            <section>
+                <div class="container">
+                    <div class="row g-4 gx-5">
+                        <div class="col-lg-6 offset-lg-3 text-center">
+                            <div class="subtitle text-dark wow fadeInUp mb-3">Drive Electric</div>
+                        <h2 class="wow fadeInUp">Electric Vehicle Charging Solutions</h2>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="bg-white soft-shadow p-2 pb-0 mb-4 rounded-10 bottom-0 text-center z-index-2 wow scaleIn" data-wow-delay=".0s">
+                                <i class="bg-color text-light fs-48 m-3 p-2 absolute bottom id-color icofont-home rounded-5px"></i>
+                                <img src="images/misc/18.webp" class="img-fluid rounded-10 mb-2" alt="">
+                                <h3>Home Charging</h3>
+                            </div>
+                            <p class="np-bottom">Home charging is one of the most convenient and cost-effective ways to charge your electric vehicle (EV). By installing a home charging station, you can enjoy the comfort of refueling your car overnight while saving time and money.</p>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="bg-white soft-shadow p-2 pb-0 mb-4 rounded-10 bottom-0 text-center z-index-2 wow scaleIn" data-wow-delay=".2s">
+                                <i class="bg-color text-light fs-48 m-3 p-2 absolute bottom id-color icofont-battery-full rounded-5px"></i>
+                                <img src="images/misc/19.webp" class="img-fluid rounded-10 mb-2" alt="">
+                                <h3>Public Stations</h3>
+                            </div>
+                            <p class="np-bottom">Public charging stations are essential for EV drivers who need to charge on the go. These stations are strategically located in urban areas, highways, malls, and parking lots to ensure that you’re never far from a reliable charging point.</p>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="bg-white soft-shadow p-2 pb-0 mb-4 rounded-10 bottom-0 text-center z-index-2 wow scaleIn" data-wow-delay=".4s">
+                                <i class="bg-color text-light fs-48 m-3 p-2 absolute bottom id-color icofont-ui-touch-phone rounded-5px"></i>
+                                <img src="images/misc/20.webp" class="img-fluid rounded-10 mb-2" alt="">
+                                <h3>Commercial Systems</h3>
+                            </div>
+                            <p class="np-bottom">Commercial charging systems are designed for businesses, workplaces, and public facilities to provide EV charging solutions at scale. These systems are tailored to support growing EV adoption and contribute to a sustainable future.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-grey">
+                <div class="container">
+                    <div class="row align-items-center g-4 gx-5">
+                        <div class="col-lg-6">
+                            <img src="images/misc/map.webp" class="img-fluid" alt="">
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="subtitle bg-white text-dark wow fadeInUp mb-3">Welcome to Ev World</div>
+                            <h2>240+ Public Charging Points Available</h2>
+                            <p>With over 240 public charging points, finding a convenient spot to charge your EV has never been easier. Strategically located across key areas, our network ensures you’re always connected, whether you’re commuting, shopping, or traveling.</p>
+                            <a class="btn-main" href="map.html">Charger Stations Near You</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="relative overflow-hidden mh-500px bg-dark section-dark text-light">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 offset-lg-6">
+                            <div class="ps-lg-5 ps-0">
+                                <i class="icofont-quote-left id-color fs-40 mb-4 wow fadeInUp"></i>
+                                <h3 class="mb-4 wow fadeInUp">Electric vehicles: not just a mode of transportation, but a symbol of our collective resolve to drive change and usher in a new era of mobility</h3>
+                                <span class="wow fadeInUp">Robert Anderson, Founder</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 absolute h-100 mh-500px top-0 bg-dark" data-bgimage="url(images/background/2.webp)">
+                </div>
+            </section>
+
+            <section>
+                <div class="container">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-lg-8">
+                            <div class="subtitle bg-grey text-dark wow fadeInUp mb-3">Spark Change</div>
+                            <h2 class="wow fadeInUp">Advanced Features</h2>
+                        </div>
+                        <div class="col-lg-4 text-lg-end">
+                            <a class="btn-text text-dark wow fadeInLeft" href="#">Discover all features</a>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="mb-4 relative wow fadeInRight" data-wow-delay=".3s">
+                                <div class="absolute top-0 end-0">01</div>
+                                <i class="bg-color text-light fs-48 p-2 absolute id-color icofont-smart-phone rounded-10px"></i>
+                                <div class="pl-90">
+                                    <h4>Mobile App Integration</h4>
+                                    <p class="mb-0">Easily manage your EV charging needs with our app, offering real-time updates, booking, and navigation at your fingertips.</p>
+                                </div>
+                            </div>
+
+                            <div class="mb-4 relative wow fadeInRight" data-wow-delay=".5s">
+                                <div class="absolute top-0 end-0">02</div>
+                                <i class="bg-color text-light fs-48 p-2 absolute id-color icofont-network-tower rounded-10px"></i>
+                                <div class="pl-90">
+                                    <h4>Network Connectivity</h4>
+                                    <p class="mb-0">Stay charged and connected with reliable network support for real-time updates and seamless operation.</p>
+                                </div>
+                            </div>
+
+                            <div class="mb-4 relative wow fadeInRight" data-wow-delay=".7s">
+                                <div class="absolute top-0 end-0">03</div>
+                                <i class="bg-color text-light fs-48 p-2 absolute id-color icofont-finger-print rounded-10px"></i>
+                                <div class="pl-90">
+                                    <h4>User Authentication</h4>
+                                    <p class="mb-0">Secure and hassle-free access with robust user authentication for personalized charging experiences.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <img src="images/misc/charging-station.webp" class="img-fluid wow scaleIn" alt="">
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="mb-4 relative wow fadeInLeft" data-wow-delay=".3s">
+                                <div class="absolute top-0 start-0">04</div>
+                                <i class="bg-dark text-light fs-48 p-2 absolute end-0 id-color icofont-check-circled rounded-10px"></i>
+                                <div class="pr-90">
+                                    <h4 class="text-end">In-App Payments</h4>
+                                    <p class="text-end mb-0">Enjoy seamless in-app payments for quick, secure, and convenient charging sessions anytime.</p>
+                                </div>
+                            </div>
+
+                            <div class="mb-4 relative wow fadeInLeft" data-wow-delay=".3s">
+                                <div class="absolute top-0 start-0">05</div>
+                                <i class="bg-dark text-light fs-48 p-2 absolute end-0 id-color icofont-safety rounded-10px"></i>
+                                <div class="pr-90">
+                                    <h4 class="text-end">Overcurrent Protection</h4>
+                                    <p class="text-end mb-0">Protect your vehicle and charging equipment with advanced overcurrent protection for safe and reliable charging.</p>
+                                </div>
+                            </div>
+
+                            <div class="mb-4 relative wow fadeInLeft" data-wow-delay=".3s">
+                                <div class="absolute top-0 start-0">05</div>
+                                <i class="bg-dark text-light fs-48 p-2 absolute end-0 id-color icofont-thermometer rounded-10px"></i>
+                                <div class="pr-90">
+                                    <h4 class="text-end">Temperature Monitoring</h4>
+                                    <p class="text-end mb-0">Ensure optimal performance with real-time temperature monitoring, preventing overheating and ensuring safe charging.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="container">
+                    <div class="row align-items-center g-4">
+                        <div class="col-lg-8">                            
+                            <div class="subtitle bg-white wow fadeInUp mb-3">Do you have</div>
+                            <h2 class="wow fadeInUp" data-wow-delay=".2s">Any questions?</h2>
+                        </div>
+                        <div class="col-lg-4 text-lg-end">
+                            <a class="btn-text text-dark wow fadeInLeft" href="#">More questions</a>
+                        </div>
+                    </div>
+
+                    <div class="row g-custom-4">
+                        <div class="col-md-6 wow fadeInUp">
+                            <div class="accordion secondary">
+                                <div class="accordion-section">
+                                    <div class="accordion-section-title" data-tab="#accordion-1">
+                                        What is an electric vehicle (EV)?
+                                    </div>
+                                    <div class="accordion-section-content" id="accordion-1">
+                                        <p>An electric vehicle, or EV, is a type of vehicle that is powered by an electric motor using electricity stored in rechargeable batteries. EVs come in various forms, including all-electric vehicles (powered solely by batteries) and plug-in hybrid electric vehicles (PHEVs, which use both batteries and a conventional internal combustion engine).</p>
+                                    </div>
+                                    <div class="accordion-section-title" data-tab="#accordion-2">
+                                        How do electric vehicles work?
+                                    </div>
+                                    <div class="accordion-section-content" id="accordion-2">
+                                        <p>Electric vehicles use one or more electric motors for propulsion. These motors are powered by electricity stored in rechargeable batteries. When the vehicle is in motion, the electric motor(s) convert electrical energy from the batteries into mechanical energy to drive the wheels.</p>
+                                    </div>
+                                    <div class="accordion-section-title" data-tab="#accordion-3">
+                                         How long does it take to charge?
+                                    </div>
+                                    <div class="accordion-section-content" id="accordion-3">
+                                        <p>Charging times vary depending on the vehicle's battery size, charging equipment, and charging rate. Level 1 charging (using a standard household outlet) typically takes several hours to fully charge an EV.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 wow fadeInUp">
+                            <div class="accordion secondary">
+                                <div class="accordion-section">
+                                    <div class="accordion-section-title" data-tab="#accordion-b-4">
+                                        How far can electric vehicles travel on a single charge?
+                                    </div>
+                                    <div class="accordion-section-content" id="accordion-b-4">
+                                        <p>The range of an electric vehicle depends on factors such as battery capacity, driving conditions, and driving habits. Most modern EVs offer ranges of 100 miles or more on a single charge, with some models exceeding 300 miles per charge.</p>
+                                    </div>
+                                    <div class="accordion-section-title" data-tab="#accordion-b-5">
+                                        Where can I charge an electric vehicle?
+                                    </div>
+                                    <div class="accordion-section-content" id="accordion-b-5">
+                                        <p>Electric vehicles can be charged at home using a standard electrical outlet or a dedicated home charging station. Additionally, public charging stations are becoming increasingly common in urban areas, along highways, and at destinations such as shopping centers and workplaces.</p>
+                                    </div>
+                                    <div class="accordion-section-title" data-tab="#accordion-b-6">
+                                        Are electric vehicles suitable for cold climates?
+                                    </div>
+                                    <div class="accordion-section-content" id="accordion-b-6">
+                                        <p>Electric vehicles can perform well in cold climates, but extreme temperatures can affect battery performance and range. Preheating the cabin while the vehicle is still plugged in can help preserve battery charge in cold weather. Some EVs also offer features such as battery preconditioning to optimize performance in cold temperatures.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="jarallax bg-color text-light pt30 pb30">
+                <div class="wow fadeInRight d-flex">
+                  <div class="de-marquee-list wow">
+                    <div class="d-item">
+                      <span class="d-item-txt">Mobile App Integration</span>
+                      <span class="d-item-display">
+                        <i class="d-item-block bg-white"></i>
+                      </span>
+                      <span class="d-item-txt">Network Connectivity</span>
+                      <span class="d-item-display">
+                        <i class="d-item-block bg-white"></i>
+                      </span>
+                      <span class="d-item-txt">User Authentication</span>
+                      <span class="d-item-display">
+                        <i class="d-item-block bg-white"></i>
+                      </span>
+                      <span class="d-item-txt">Contactless Payment:</span>
+                      <span class="d-item-display">
+                        <i class="d-item-block bg-white"></i>
+                      </span>
+                      <span class="d-item-txt">Subscription Services</span>
+                      <span class="d-item-display">
+                        <i class="d-item-block bg-white"></i>
+                      </span>
+                      <span class="d-item-txt">In-App Payments</span>
+                      <span class="d-item-display">
+                        <i class="d-item-block bg-white"></i>
+                      </span>
+                      <span class="d-item-txt">Longer Range</span>
+                      <span class="d-item-display">
+                        <i class="d-item-block bg-white"></i>
+                      </span>
+                      <span class="d-item-txt">Ground Fault Protection</span>
+                      <span class="d-item-display">
+                        <i class="d-item-block bg-white"></i>
+                      </span>
+                      <span class="d-item-txt">Overcurrent Protection</span>
+                      <span class="d-item-display">
+                        <i class="d-item-block bg-white"></i>
+                      </span>
+                      <span class="d-item-txt">Temperature Monitoring</span>
+                      <span class="d-item-display">
+                        <i class="d-item-block bg-white"></i>
+                      </span>
+                     </div>
+                  </div>
+                </div>
+            </section>
+
+
+        </div>
+        <!-- content close -->
+        
+        <!-- footer begin -->
+        <footer class="section-dark">
+            <div class="container">
+                <div class="row gx-5">
+                    <div class="col-lg-4 col-sm-6">
+                        <img src="../assets/images/673c716937f2fe93a8f04183_White logo.png" alt="" >
+                        <div class="spacer-20"></div>
+                        <p>EV Charging Stations are leading the charge towards a more sustainable future, offering a thrilling blend of cutting-edge technology, zero emissions, and unparalleled efficiency. Our journey towards a cleaner, greener world with electric vehicles leading the way.</p>
+
+                        <div class="social-icons mb-sm-30">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-12 order-lg-1 order-sm-2">
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="widget">
+                                    <h5>Company</h5>
+                                    <ul>                                        
+                                        <li><a href="about.html">About Us</a></li>
+                                        <li><a href="#">History</a></li>
+                                        <li><a href="#">Testimonials</a></li>
+                                        <li><a href="#">Careers</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="widget">
+                                    <h5>Tesla EV's</h5>
+                                    <ul>
+                                        <li><a href="#">Model 3</a></li>
+                                        <li><a href="#">Model Y</a></li>
+                                        <li><a href="#">Model S</a></li>
+                                        <li><a href="#">Model X</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 order-lg-2 order-sm-1">
+                        <div class="widget">
+                            <div class="fw-bold text-white"><i class="icofont-location-pin me-2 id-color"></i>Showroom Location</div>
+                            XYZ, india
+
+                            <div class="spacer-20"></div>
+
+                            <div class="fw-bold text-white"><i class="icofont-envelope me-2 id-color"></i>Send a Message</div>
+                            vedant.milind.deshpande@gmail.com     
+
+                            <div class="spacer-20"></div>
+
+                            <div class="fw-bold text-white"><i class="icofont-envelope me-2 id-color"></i>Make a Phone Call</div>
+                            +91 9975196491                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="subfooter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="de-flex">
+                                <div class="de-flex-col">
+                                    Copyright 2024 - Made by Vedant Deshpande
+                                </div>
+                                <ul class="menu-simple">
+                                    <li><a href="#">Terms &amp; Conditions</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer close -->
+    </div>
+    
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="js/plugins.js"></script>
+    <script src="js/designesia.js"></script>
+    <script src="js/swiper.js"></script>
+    <script src="js/custom-marquee.js"></script>
+    <script src="js/custom-swiper-1.js"></script>
+
+    <script src="../script.js"></script>
+</body>
+</html>

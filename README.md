@@ -11,7 +11,7 @@ This repository contains the projects I developed during my internship at Unifie
   
 - Advanced Projects:
   - [Digital E Gram Panchayat](https://github.com/vmDeshpande/Unified-mentor/tree/main/Digital-E-Gram-Panchayat)
-  - [Electric Vehicle Recharge Bunk]()
+  - [Electric Vehicle Recharge Bunk](https://github.com/vmDeshpande/Unified-mentor/tree/main/Electric-Vehicle-Recharge-Bunk)
 
 ---
 
