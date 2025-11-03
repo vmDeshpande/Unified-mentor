@@ -1,3 +1,7 @@
+// ============================================
+// =============== Import Modules ==============
+// ============================================
+
 import express from 'express';
 import path from 'path';
 import bodyParser from 'body-parser';
@@ -6,133 +10,134 @@ import multer from 'multer';
 import fs from 'fs';
 import { parseFile } from 'music-metadata';
 
+// ============================================
+// =============== Server Setup ================
+// ============================================
+
 const app = express();
 const port = 3000;
 
-// Middleware to parse JSON and URL-encoded bodies
+// Middleware
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static("public")); // Serve static files (e.g., uploads)
 
-// Serve static files (e.g., uploaded music)
-app.use(express.static("public"));
-
-// Set EJS as the view engine (if used for rendering views)
+// Set EJS (if used)
 app.set("view engine", "ejs");
 
-// Jamendo API credentials
+// ============================================
+// ============== Jamendo API =================
+// ============================================
+
 const clientId = '2eeec1bc';
 const apiUrl = 'https://api.jamendo.com/v3.0';
 
-// Configure multer for file uploads (save in 'public/uploads')
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, 'public/uploads/');
-  },
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + '-' + file.originalname); // Unique filename with timestamp
-  }
-});
+// Utility function to search songs from Jamendo
+async function searchJamendoTracks(searchQuery) {
+  try {
+    const response = await fetch(
+      `${apiUrl}/tracks/?client_id=${clientId}&name=${encodeURIComponent(searchQuery)}&format=json`
+    );
+    if (!response.ok) throw new Error(`Jamendo fetch failed: ${response.statusText}`);
 
-const upload = multer({ storage: storage });
+    const data = await response.json();
+    if (!data.results?.length) return [];
+
+    return data.results.map(track => ({
+      id: track.id,
+      title: track.name,
+      artist: track.artist_name,
+      album: track.album_name,
+      albumArt: track.album_image || '../placeholder.png',
+      audioSrc: track.audio,
+      isLocal: false
+    }));
+  } catch (error) {
+    console.error('Jamendo search error:', error);
+    return [];
+  }
+}
+
+// ============================================
+// ============= File Upload Setup =============
+// ============================================
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => cb(null, 'public/uploads/'),
+  filename: (req, file, cb) => cb(null, Date.now() + '-' + file.originalname)
+});
+const upload = multer({ storage });
 
 let localPlaylist = [];
 
-// Function to search for songs by title from Jamendo API
-async function searchJamendoTracks(searchQuery) {
-    try {
-      const response = await fetch(`${apiUrl}/tracks/?client_id=${clientId}&name=${encodeURIComponent(searchQuery)}&format=json`);
-      if (!response.ok) {
-        throw new Error(`Error searching for tracks: ${response.statusText}`);
-      }
+// ============================================
+// ============ Local Playlist API =============
+// ============================================
 
-      const data = await response.json();
-      if (data.results && data.results.length > 0) {
-        // Return the tracks in a formatted way
-        return data.results.map(track => ({
-          id: track.id,
-          title: track.name,
-          artist: track.artist_name,
-          album: track.album_name,
-          albumArt: track.album_image || '../placeholder.png',
-          audioSrc: track.audio, 
-          isLocal: false
-        }));
-      } else {
-        return [];
-      }
-    } catch (error) {
-      console.error('Error searching for tracks from Jamendo:', error);
-      return [];
-    }
-}
-
-// API endpoint to fetch combined playlist (Jamendo + uploads)
+// Get combined local + uploaded playlist
 app.get('/api/playlist', async (req, res) => {
-    try {  
-      // Fetch uploaded songs from local storage and extract metadata
-      const uploadsDir = path.join("public", "uploads");
-      const uploadedSongs = fs.readdirSync(uploadsDir).map(async (file) => {
-        const filePath = path.join(uploadsDir, file);
-        try {
-          // Extract metadata from local music files
-          const metadata = await parseFile(filePath);
+  try {
+    const uploadsDir = path.join("public", "uploads");
+    const uploadedFiles = fs.readdirSync(uploadsDir);
 
-          return {
-            id: Date.now().toString() + Math.random().toString(36).substr(2, 5), // Unique ID
-            title: metadata.common.title || path.basename(file, path.extname(file)), // Fallback to filename if no title
-            artist: metadata.common.artist || 'Unknown Artist',
-            album: metadata.common.album || 'Unknown Album',
-            albumArt: '../placeholder.png?height=300&width=300', // Fallback for album art
-            audioSrc: `/uploads/${file}`,
-            isLocal: true
-          };
-        } catch (error) {
-          console.error(`Error reading metadata for ${file}:`, error);
-          return {
-            id: Date.now().toString() + Math.random().toString(36).substr(2, 5), // Unique ID
-            title: path.basename(file, path.extname(file)),
-            artist: 'Unknown Artist',
-            album: 'Unknown Album',
-            albumArt: '../placeholder.png?height=300&width=300', // Fallback for album art
-            audioSrc: `/uploads/${file}`,
-            isLocal: true
-          };
-        }
-      });
+    const uploadedSongs = uploadedFiles.map(async (file) => {
+      const filePath = path.join(uploadsDir, file);
+      try {
+        const metadata = await parseFile(filePath);
+        return {
+          id: Date.now().toString() + Math.random().toString(36).substr(2, 5),
+          title: metadata.common.title || path.basename(file, path.extname(file)),
+          artist: metadata.common.artist || 'Unknown Artist',
+          album: metadata.common.album || 'Unknown Album',
+          albumArt: '../placeholder.png?height=300&width=300',
+          audioSrc: `/uploads/${file}`,
+          isLocal: true
+        };
+      } catch {
+        return {
+          id: Date.now().toString() + Math.random().toString(36).substr(2, 5),
+          title: path.basename(file, path.extname(file)),
+          artist: 'Unknown Artist',
+          album: 'Unknown Album',
+          albumArt: '../placeholder.png?height=300&width=300',
+          audioSrc: `/uploads/${file}`,
+          isLocal: true
+        };
+      }
+    });
 
-      // Wait for all metadata promises to resolve
-      const uploadedSongsData = await Promise.all(uploadedSongs);
-      const combinedPlaylist = [...localPlaylist, ...uploadedSongsData]; // Combine local and uploaded songs
-      res.json(combinedPlaylist);
-    } catch (error) {
-      console.error('Error fetching playlist:', error);
-      res.status(500).json({ error: 'Failed to fetch playlist', details: error.message });
-    }
+    const uploadedSongsData = await Promise.all(uploadedSongs);
+    const combinedPlaylist = [...localPlaylist, ...uploadedSongsData];
+    res.json(combinedPlaylist);
+  } catch (error) {
+    console.error('Error fetching playlist:', error);
+    res.status(500).json({ error: 'Failed to fetch playlist', details: error.message });
+  }
 });
 
-// API endpoint to search for songs from Jamendo
+// ============================================
+// ============ Online Search API ==============
+// ============================================
+
 app.get('/api/search', async (req, res) => {
   const searchQuery = req.query.q;
-
-  if (!searchQuery) {
-    return res.status(400).json({ error: 'Search query is required' });
-  }
+  if (!searchQuery) return res.status(400).json({ error: 'Search query is required' });
 
   try {
-    // Fetch search results from Jamendo API
     const onlinePlaylist = await searchJamendoTracks(searchQuery);
-    res.json(onlinePlaylist); // Return the search results as a JSON response
+    res.json(onlinePlaylist);
   } catch (error) {
-    console.error('Error searching for playlist:', error);
-    res.status(500).json({ error: 'Failed to search for tracks', details: error.message });
+    console.error('Search error:', error);
+    res.status(500).json({ error: 'Failed to search tracks', details: error.message });
   }
 });
 
-// API endpoint to upload a local music file
+// ============================================
+// ============= Upload Endpoint ===============
+// ============================================
+
 app.post('/api/upload', upload.single('music'), (req, res) => {
-  if (!req.file) {
-    return res.status(400).json({ error: 'No file uploaded' });
-  }
+  if (!req.file) return res.status(400).json({ error: 'No file uploaded' });
 
   const newTrack = {
     id: Date.now().toString(),
@@ -144,10 +149,51 @@ app.post('/api/upload', upload.single('music'), (req, res) => {
     isLocal: true
   };
 
-  localPlaylist.push(newTrack); // Add new track to local playlist
-  res.json(newTrack); // Respond with the newly uploaded track
+  localPlaylist.push(newTrack);
+  res.json(newTrack);
 });
 
+// ============================================
+// ========== Playlist Management API ==========
+// ============================================
+
+const playlists = {}; // Structure: { playlistName: [songObjects] }
+
+// Create playlist
+app.post('/api/createPlaylist', (req, res) => {
+  const { name } = req.body;
+  if (!name) return res.status(400).json({ error: 'Playlist name required' });
+
+  if (!playlists[name]) playlists[name] = [];
+  res.json({ message: 'Playlist created', playlists });
+});
+
+// Get all playlists
+app.get('/api/playlists', (req, res) => {
+  res.json(playlists);
+});
+
+// Add song to playlist
+app.post('/api/addToPlaylist', (req, res) => {
+  const { playlistName, song } = req.body;
+  if (!playlistName || !song) return res.status(400).json({ error: 'Missing fields' });
+  if (!playlists[playlistName]) return res.status(404).json({ error: 'Playlist not found' });
+
+  playlists[playlistName].push(song);
+  res.json({ message: 'Song added', playlist: playlists[playlistName] });
+});
+
+// Get songs from specific playlist
+app.get('/api/playlists/:name', (req, res) => {
+  const name = req.params.name;
+  if (!playlists[name]) return res.status(404).json({ error: 'Playlist not found' });
+  res.json(playlists[name]);
+});
+
+// ============================================
+// =============== Start Server ================
+// ============================================
+
 app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+  console.log(`🚀 Server running at http://localhost:${port}`);
 });

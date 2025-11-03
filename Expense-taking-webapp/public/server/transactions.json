@@ -1,26 +1,14 @@
 [
   {
-    "id": "cef6423c-6dfc-4455-ba1e-04072593d477",
-    "text": "Test1",
-    "amount": 1000,
+    "id": "ef35c9eb-45ca-496a-8c4f-a1b66bb7c416",
+    "text": "Test",
+    "amount": 10000,
     "category": "Salary"
   },
   {
-    "id": "690c04d5-132c-4a45-97e6-8cd1518b08bf",
-    "text": "Test2",
-    "amount": -500,
+    "id": "bb691570-0ec7-4b13-90af-1c68f91935e6",
+    "text": "Burger",
+    "amount": -300,
     "category": "Food"
-  },
-  {
-    "id": "2573354b-087c-4dcc-9b37-7256f04b7b30",
-    "text": "Test3",
-    "amount": -250,
-    "category": "Transportation"
-  },
-  {
-    "id": "5773c4e8-08f3-4845-81f6-13e82297cb2a",
-    "text": "Test4",
-    "amount": 100,
-    "category": "Other"
   }
 ]
